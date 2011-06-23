@@ -1,2 +1,2 @@
-require 'lottery'
+require './lottery'
 run Sinatra::Application
