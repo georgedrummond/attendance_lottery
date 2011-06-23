@@ -16,6 +16,11 @@ post "/lottery" do
   haml :lottery
 end
 
+get '/demo' do
+  @students = File.new('students.csv.sample').readlines.sort
+  haml :lottery
+end
+
 helpers do
   def pad_number(number)
     return "%03d" % number

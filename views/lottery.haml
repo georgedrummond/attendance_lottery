@@ -15,12 +15,13 @@
     #content  
       %table
         -for i in 0..@students.count-1 do
-          -number = pad_number(i+1).split("")
-          %tr{:id => "student_#{number}", :class => "hundreds_#{number[0]} tens_#{number[1]} units_#{number[2]}"}
-            %td=number
+          -number = pad_number(i+1)
+          -number_parts = number.split("")
+          %tr{:id => "student_#{number}", :class => "hundreds_#{number_parts[0]} tens_#{number_parts[1]} units_#{number_parts[2]}"}
+            %td{:class => "line_number"}=number
             -student = @students[i].split(',')
-            %td=student[2]
-            %td #{student[0]} #{student[1]}
+            %td{:class => "registration_group"}=student[2]
+            %td{:class => "student_name"} #{student[0]} #{student[1]}
         
         :erb
           <script>Lottery.generate_number(<%= @students.count-1%>)</script>
