@@ -1,0 +1,30 @@
+%html
+  %head
+    %title Attendance Lottery
+    %link{:rel => :stylesheet, :href => '/css/styles.css', :type => 'text/css'}
+    %script{:src => 'javascripts/jquery.min.js'}
+    %script{:src => 'javascripts/app.js'}
+  %body
+    #header
+      #numbers
+        #hundreds.number ?
+        #tens.number ?
+        #units.number ?
+      %a{:href => "/"} 
+        %h1 Attendance Lottery
+    #content  
+      %table
+        -for i in 0..@students.count-1 do
+          -number = pad_number(i+1).split("")
+          %tr{:id => "student_#{number}", :class => "hundreds_#{number[0]} tens_#{number[1]} units_#{number[2]}"}
+            %td=number
+            -student = @students[i].split(',')
+            %td=student[2]
+            %td #{student[0]} #{student[1]}
+        
+        :erb
+          <script>Lottery.generate_number(<%= @students.count-1%>)</script>
+  
+      #footer 
+        %p &copy; George Drummond 2011. All Rights Reserved.
+        %p Look at the code on <a href="http://github.com/georgedrummond/attendance_lottery">GitHub</a>, its open source.

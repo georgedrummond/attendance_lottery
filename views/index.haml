@@ -1,0 +1,34 @@
+%html
+  %head
+    %title Attendance Lottery
+    %link{:rel => :stylesheet, :href => '/css/styles.css', :type => 'text/css'}
+    %script{:src => 'javascripts/jquery.min.js'}
+    %script{:src => 'javascripts/app.js'}
+  %body
+    #header
+      %a{:href => "/"} 
+        %h1 Attendance Lottery
+    #content
+      .aligner
+        .instructions
+          %h2 Instructions
+          %ol
+            %li Run a report on bromcom called Attendance History for last week.
+            %li Select all cells and select "Format Cells" from the format menu.
+            %li Go to "Allignment" and unselect "merge cells" and "???"
+            %li Sort by attendance%
+            %li Delete all students that we arent interested in (Students not in your group or not 100% attendance)
+            %li Delete every other column than <b>First Name</b>, <b>Last Name</b> and <b>Form Group</b>
+            %li File -> Save As. Select <b>CSV</b> from format type.
+            %li Upload here.
+        
+        %form{:action => "/lottery", :method => :post, :enctype => "multipart/form-data"}
+          %label File:
+          %input{:type => :file, :name => :file, :id => :file}
+          %br
+          %input{:type => :submit, :name => :subit, :value => "Generate Lottery"}
+
+    
+    #footer 
+      %p &copy; George Drummond 2011. All Rights Reserved.
+      %p Look at the code on <a href="http://github.com/georgedrummond/attendance_lottery">GitHub</a>, its open source.
