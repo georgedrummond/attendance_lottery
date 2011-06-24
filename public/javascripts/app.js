@@ -38,20 +38,20 @@ $(function(document){
 
     $('#hundreds').click(function(){
       $(this).html(Lottery.hundreds);
-      flash_large_number();
       $('tr').not('.hundreds_'+Lottery.hundreds).remove()
+      flash_large_number();
     });
   
     $('#tens').click(function(){
       $(this).html(Lottery.tens);
-      flash_large_number();
       $('tr').not('.tens_'+Lottery.tens).remove();
+      flash_large_number();
     });
 
     $('#units').click(function(){
       $(this).html(Lottery.units);
-      flash_large_number();
       $('tr').not('.units_'+Lottery.units).remove();
+      flash_large_number();
     });
 
     $('#winner').click(function(){
