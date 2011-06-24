@@ -4,6 +4,7 @@
     %title Attendance Lottery
     %link{:rel => :stylesheet, :href => '/css/styles.css', :type => 'text/css'}
     %script{:src => 'javascripts/jquery.min.js'}
+    %script{:src => 'javascripts/soundmanager2-nodebug.js'}
     %script{:src => 'javascripts/app.js'}
   %body
     #header
@@ -26,7 +27,10 @@
         
         :erb
           <script>Lottery.generate_number(<%= @students.count-1%>)</script>
-  
+      #buzzer_sound
+      #winner_sound
+      #large_number
+      #winner
       #footer 
         %p &copy; George Drummond 2011. All Rights Reserved.
         %p Look at the code on <a href="http://github.com/georgedrummond/attendance_lottery">GitHub</a>, its open source.
