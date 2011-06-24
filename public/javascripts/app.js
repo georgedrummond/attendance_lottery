@@ -1,17 +1,17 @@
 $(function(document){       
   $('#hundreds').click(function(){
     $(this).html(Lottery.hundreds)
-    $('tr').not('.hundreds_'+Lottery.hundreds).fadeOut()
+    $('tr').not('.hundreds_'+Lottery.hundreds).remove()
   });
   
   $('#tens').click(function(){
     $(this).html(Lottery.tens);
-    $('tr').not('.tens_'+Lottery.tens).fadeOut();
+    $('tr').not('.tens_'+Lottery.tens).remove();
   });
   
   $('#units').click(function(){
     $(this).html(Lottery.units);
-    $('tr').not('.units_'+Lottery.units).fadeOut();
+    $('tr').not('.units_'+Lottery.units).remove();
   });      
   
   $('.student').live('click', function(){
