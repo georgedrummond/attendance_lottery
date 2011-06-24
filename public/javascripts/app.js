@@ -28,9 +28,9 @@ var Lottery = {
   units:null,
   generate_number:function(number){
     var max = number+1;
-    console.log('max = '+max);
+    //console.log('max = '+max);
     var random_number = this.pad_number( Math.floor(Math.random()*max) ); // generate random number
-    console.log('number = '+random_number);
+    //console.log('number = '+random_number);
     var number_string = random_number.toString();
     this.hundreds = number_string[0];
     this.tens = number_string[1];
