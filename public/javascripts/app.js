@@ -1,12 +1,11 @@
 $(function(document){
-  //soundManager.url = '/swf/';
-  //soundManager.flashVersion = 9; // optional: shiny features (default = 8)
-  //soundManager.useFlashBlock = false; // optionally, enable when you're ready to dive in
+  soundManager.url = '/swf/';
+  soundManager.flashVersion = 9; // optional: shiny features (default = 8)
+  soundManager.useFlashBlock = false; // optionally, enable when you're ready to dive in
   // enable HTML5 audio support, if you're feeling adventurous. iPad/iPhone will always get this.
-  // soundManager.useHTML5Audio = true;
+   soundManager.useHTML5Audio = true;
 
-  //soundManager.onready(function(){
-  /*
+  soundManager.onready(function(){
     var bell = soundManager.createSound({
       id: 'buzzer_sound',
       url: '/sounds/bell.mp3',
@@ -20,19 +19,19 @@ $(function(document){
       autoLoad: true,
       autoPlay: false
     });
-    */  
+    
     function flash_large_number(){
       var tens = $('#tens').html(),
       units = $('#units').html(),
       hundreds = $('#hundreds').html();
       if(units == '?' || tens == '?' || hundreds =='?'){
-        //bell.play();
+        bell.play();
         $('#large_number').html(hundreds+tens+units).fadeIn('fast').delay(2000).fadeOut('fast');
       } else {
         var winner = $('tr:first > .student_name').html();
         var registration_group = $('tr:first > .registration_group').html();
         $('#winner').html(winner + "<br/>" + registration_group).fadeIn();
-        //win.play();
+        win.play();
       }  
     }
 
@@ -57,7 +56,7 @@ $(function(document){
     $('#winner').click(function(){
       $(this).fadeOut();
     });
-    //});
+  });
 });
     
 var Lottery = {
