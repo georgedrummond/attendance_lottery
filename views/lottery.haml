@@ -2,17 +2,17 @@
 %html
   %head
     %title Attendance Lottery
-    %link{:rel => :stylesheet, :href => '/css/styles.css', :type => 'text/css'}
-    %script{:src => '/javascripts/jquery.min.js'}
-    %script{:src => '/javascripts/soundmanager2-nodebug.js'}
-    %script{:src => '/javascripts/app.js'}
+    %link{:rel => :stylesheet, :href => '/lottery/css/styles.css', :type => 'text/css'}
+    %script{:src => '/lottery/javascripts/jquery.min.js'}
+    %script{:src => '/lottery/javascripts/soundmanager2-nodebug.js'}
+    %script{:src => '/lottery/javascripts/app.js'}
   %body
     #header
       #numbers
         #hundreds.number ?
         #tens.number ?
         #units.number ?
-      %a{:href => "/"} 
+      %a{:href => "/lottery"} 
         %h1 Attendance Lottery
     #content  
       %table

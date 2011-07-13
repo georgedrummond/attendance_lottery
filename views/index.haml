@@ -2,18 +2,18 @@
 %html
   %head
     %title Attendance Lottery
-    %link{:rel => :stylesheet, :href => '/css/styles.css', :type => 'text/css'}
-    %script{:src => '/javascripts/jquery.min.js'}
-    %script{:src => '/javascripts/soundmanager2-nodebug.js'}
-    %script{:src => '/javascripts/app.js'}
+    %link{:rel => :stylesheet, :href => '/lottery/css/styles.css', :type => 'text/css'}
+    %script{:src => '/lottery/javascripts/jquery.min.js'}
+    %script{:src => '/lottery/javascripts/soundmanager2-nodebug.js'}
+    %script{:src => '/lottery/javascripts/app.js'}
   %body
     #header
-      %a{:href => "/"} 
+      %a{:href => "/lottery"} 
         %h1 Attendance Lottery
     #content
       .aligner
         .demo
-          %a{:href => "/demo"} Working Demo
+          %a{:href => "/lottery/demo"} Working Demo
         .instructions
           %h2 Instructions
           %ol
@@ -26,7 +26,7 @@
             %li File -> Save As. Select <b>CSV</b> from format type.
             %li Upload here.
         
-        %form{:action => "/lottery", :method => :post, :enctype => "multipart/form-data"}
+        %form{:action => "/lottery/lottery", :method => :post, :enctype => "multipart/form-data"}
           %label File:
           %input{:type => :file, :name => :file, :id => :file}
           %br
